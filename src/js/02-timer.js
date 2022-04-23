@@ -14,10 +14,11 @@ const refs = {
 }
 
 refs.timer.style.cssText = `list-style: none;  font-size: 26px; font-weight: 700;`;
-refs.startBtn.setAttribute('disabled', 'true');
+refs.startBtn.setAttribute('disabled', true);
 
 refs.startBtn.addEventListener('click', () => {
   countDownTimer.start();
+  refs.input[0].setAttribute('disabled', true);
 })
 
 const countDownTimer = {

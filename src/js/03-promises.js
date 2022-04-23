@@ -8,11 +8,11 @@ refs.formElements.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) { 
     event.preventDefault();
-
+    
     let firstDelay = Number(event.target.elements.delay.value);
     let stepDelay = Number(event.target.elements.step.value);
     let amountCreateProm = Number(event.target.elements.amount.value);
-    let position = 0;
+    let position = 0;    
     
     for (let i = 0; i < amountCreateProm; i += 1){
         position += 1;
@@ -23,6 +23,7 @@ function handleSubmit(event) {
         
         firstDelay += stepDelay;
     }
+    event.currentTarget.reset();
 };
 
 

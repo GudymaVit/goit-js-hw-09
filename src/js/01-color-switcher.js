@@ -12,24 +12,26 @@ console.log(refs.stopBtn);
 
 refs.startBtn.addEventListener('click', () => {
     console.log('start');
+    refs.startBtn.setAttribute('disabled', true);
     chengColor.start();
 });
 
 refs.stopBtn.addEventListener('click', () => {
     console.log('stop');
+    refs.startBtn.removeAttribute('disabled');
     chengColor.stop();
 });
 
 const chengColor = {
     intervaId: null,
-    isActive: false,
+    // isActive: false,
 
     start() {
-        if (this.isActive) {
-            return;
-        }
-        this.isActive = true;
-
+        // if (this.isActive) {
+        //     return;
+        // }
+        // this.isActive = true;
+        
         this.intervaId = setInterval(() => {
             const bodyColor = document.body.style.background = getRandomHexColor();
             console.log(`color hex:${bodyColor}`);
@@ -38,7 +40,7 @@ const chengColor = {
     
     stop() {
         clearInterval(this.intervaId);
-        this.isActive = false;
+        // this.isActive = false;
     },
 }
 
